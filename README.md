@@ -104,11 +104,11 @@ Se genera una imagen con contornos verdes y etiquetas `TIPO + ID` sobre cada pas
 
 ## Resultados
 
-![Imagen original](pills.png)
+![Imagen original](Deteccion%20de%20pastillas%20en%20cinta%20industrial/pills.png)
 
-![Segmentación — paso B](resultado_B.png)
+![Segmentación — paso B](Deteccion%20de%20pastillas%20en%20cinta%20industrial/resultado_B.png)
 
-![Clasificación final — paso D](resultado_D.png)
+![Clasificación final — paso D](Deteccion%20de%20pastillas%20en%20cinta%20industrial/resultado_D.png)
 
 ### Conteo obtenido
 
@@ -210,38 +210,37 @@ Sobre el crop ganador se aplica umbralización adaptativa gaussiana y se filtran
 
 ### Ejemplos de detecciones exitosas
 
-![img_1](patentes/img_1_resultado.png)
+![img_1](Deteccion%20de%20patentes%20de%20autos/Captura%20de%20pantalla%202026-06-14%20005105.png)
 
-![img_2](patentes/img_2_resultado.png)
+![img_2](Deteccion%20de%20patentes%20de%20autos/Captura%20de%20pantalla%202026-06-14%20005127.png)
 
-![img_3](patentes/img_3_resultado.png)
+![img_3](Deteccion%20de%20patentes%20de%20autos/Captura%20de%20pantalla%202026-06-14%20005144.png)
 
-![img_4](patentes/img_4_resultado.png)
+![img_4](Deteccion%20de%20patentes%20de%20autos/Captura%20de%20pantalla%202026-06-14%20005158.png)
 
-![img_8](patentes/img_8_resultado.png)
+![img_8](Deteccion%20de%20patentes%20de%20autos/Captura%20de%20pantalla%202026-06-14%20005216.png)
 
-![img_9](patentes/img_9_resultado.png)
+![img_9](Deteccion%20de%20patentes%20de%20autos/Captura%20de%20pantalla%202026-06-14%20005229.png)
 
-![img_11](patentes/img_11_resultado.png)
+![img_11](Deteccion%20de%20patentes%20de%20autos/Captura%20de%20pantalla%202026-06-14%20005241.png)
 
-![img_12](patentes/img_12_resultado.png)
+![img_12](Deteccion%20de%20patentes%20de%20autos/Captura%20de%20pantalla%202026-06-14%20005251.png)
 
 ---
 
 ## Estructura del repositorio
 
 ```
-PDI-TP2/
-├── Deteccion_pastillas.py   # pipeline parte A — pastillas
-├── detec_pat_edit.py        # pipeline parte B — patentes
-├── pills.png                # imagen de entrada (pastillas)
-├── img_1.jpg                # imágenes de vehículos (img_1 a img_12)
-├── ...
-├── patentes/                # capturas de resultados parte B
-│   ├── img_1_resultado.png
-│   └── ...
-├── resultado_B.png          # captura paso B (pastillas)
-├── resultado_D.png          # captura paso D (pastillas)
+Procesamiento_de_Imagenes_TP2/
+├── Deteccion de pastillas en cinta industrial/
+│   ├── deteccion_pas_edit.py
+│   ├── pills.png
+│   ├── resultado_B.png
+│   └── resultado_D.png
+├── Deteccion de patentes de autos/
+│   ├── detec_pat_edit.py
+│   ├── img_1.jpg ... img_12.jpg
+│   └── Captura de pantalla 2026-06-14 xxxxxx.png  (capturas de resultados)
 └── README.md
 ```
 
@@ -260,13 +259,32 @@ Instalación:
 pip install opencv-python numpy matplotlib
 ```
 
-Ejecución — Parte A (pastillas):
+## Cómo ejecutar
+
+### 1. Clonar el repositorio
 ```bash
-python Deteccion_pastillas.py
+git clone https://github.com/tu-usuario/PDI-TP2.git
+cd PDI-TP2
 ```
 
-Ejecución — Parte B (patentes):
+### 2. Crear entorno virtual e instalar dependencias
 ```bash
+python -m venv venv
+venv\Scripts\activate        # Windows
+pip install opencv-python numpy matplotlib
+```
+
+### 3. Parte A — Detección de pastillas
+Asegurate de que `pills.png` esté en la misma carpeta que el script.
+```bash
+cd "Deteccion de pastillas en cinta industrial"
+python deteccion_pas_edit.py
+```
+
+### 4. Parte B — Detección de patentes
+Asegurate de que las imágenes `img_1.jpg` a `img_12.jpg` estén en la misma carpeta que el script.
+```bash
+cd "Deteccion de patentes de autos"
 python detec_pat_edit.py
 ```
 
